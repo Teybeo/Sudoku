@@ -9,11 +9,11 @@ namespace Sudoku
 		public static void Main(string[] args)
 		{
 //			Grille grille = Grille.DummyData();
-			List<Grille> list = Grille.loadFrom("../../resolved.sud");
+			List<Sudoku> list = Sudoku.loadFrom("../../resolved.sud");
 			
-			foreach (Grille grille in list) {
-				Console.Write(grille);
-				Console.WriteLine("[Validity]: " + (grille.verifyGrille() == true ? "OK" : "INVALID"));
+			foreach (Sudoku sudoku in list) {
+				Console.Write(sudoku);
+				Console.WriteLine("[Validity]: " + (sudoku.checkValidity() == true ? "OK" : "INVALID"));
 				Console.WriteLine();
 			}
 

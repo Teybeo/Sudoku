@@ -59,9 +59,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Grille.cs" />
-    <Compile Include="GrilleLoader.cs" />
-    <Compile Include="GrilleTester.cs" />
+    <Compile Include="Cell.cs" />
+    <Compile Include="Sudoku.cs" />
+    <Compile Include="SudokuLoader.cs" />
+    <Compile Include="SudokuTester.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
