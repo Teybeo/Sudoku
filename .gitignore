@@ -1,0 +1,4 @@
+*.xshd
+*.vssettings
+bin/
+obj/
