@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Sudoku
 {
@@ -8,25 +9,30 @@ namespace Sudoku
 	/// </summary>
 	public partial class Sudoku
 	{
+
 		/// <summary>
 		/// Verify the validity of lines, columns and squares regions
 		/// </summary>
 		public bool checkValidity() {
 			
 			int root = (int)Math.Sqrt(size);
-			HashSet<int>[,] square_symbols = new HashSet<int>[root, root];
-			HashSet<int> line_symbols = new HashSet<int>();
-			HashSet<int> column_symbols = new HashSet<int>();
+			
+			if (root * root != size)
+				return false;
+			
+			HashSet<char>[,] square_symbols = new HashSet<char>[root, root];
+			HashSet<char> line_symbols = new HashSet<char>();
+			HashSet<char> column_symbols = new HashSet<char>();
 			
 			// Allocate the hashsets
 			for (int i = 0; i < root; i++)
 				for (int j = 0; j < root; j++)
-					square_symbols[i, j] = new HashSet<int>();
+					square_symbols[i, j] = new HashSet<char>();
 			
-			for (int i = 0; i < size; i++) 
+			for (int i = 0; i < size; i++)
 			{
-				for (int j = 0; j < size; j++) 
-				{	
+				for (int j = 0; j < size; j++)
+				{
 					// Potential Optimisation
 					// If already in the set, the grid is wrong
 					
@@ -45,8 +51,8 @@ namespace Sudoku
 				column_symbols.Clear();
 			}
 			
-			// Check the set of each squares 
-			foreach (HashSet<int> set in square_symbols) {
+			// Check the set of each squares
+			foreach (HashSet<char> set in square_symbols) {
 				
 				if (set.SetEquals(symbols) == false)
 					return false;

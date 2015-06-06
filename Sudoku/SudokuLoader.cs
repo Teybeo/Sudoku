@@ -39,15 +39,15 @@ namespace Sudoku
 			string symbols = reader.ReadLine();
 			int length = symbols.Length;
 			sudoku.size = length;
-			sudoku.symbols = new int[length];
+			sudoku.symbols = new char[length];
 			for (int i = 0; i < length; i++) {
-				sudoku.symbols[i] = (int)Char.GetNumericValue(symbols[i]);
+				sudoku.symbols[i] = symbols[i];
 			}
 			
 			sudoku.grid = new Cell[length,length];
 			for (int i = 0; i < length; i++) {
 				for (int j = 0; j < length; j++) {
-					sudoku.grid[i, j] = new Cell(reader.Read() - '0');
+					sudoku.grid[i, j] = new Cell((char)reader.Read());
 				}
 				// Consume \n and/or \r
 				reader.ReadLine(); 

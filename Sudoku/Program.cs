@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Sudoku
@@ -13,7 +14,7 @@ namespace Sudoku
 			
 			foreach (Sudoku sudoku in list) {
 				Console.Write(sudoku);
-				Console.WriteLine("[Validity]: " + (sudoku.checkValidity() == true ? "OK" : "INVALID"));
+				Console.WriteLine("[Validity]: " + (sudoku.checkValidity() ? "OK" : "INVALID"));
 				Console.WriteLine();
 			}
 

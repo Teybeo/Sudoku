@@ -4,9 +4,9 @@ namespace Sudoku
 {
 	public class Cell
 	{
-		public int val { get; set; }
+		public char val { get; set; }
 		
-		public Cell(int val) {
+		public Cell(char val) {
 			this.val = val;
 		}
 	}

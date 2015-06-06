@@ -9,7 +9,7 @@ namespace Sudoku
 		private string nom;
 		private string date;
 		private Cell[,] grid;
-		private int[] symbols;
+		private char[] symbols;
 		
 		public int size { get; set;}
 		
@@ -17,7 +17,7 @@ namespace Sudoku
 		{
 		}
 		
-		public Sudoku(int[,] data, int size, int[] symbols) {
+		public Sudoku(char[,] data, int size, char[] symbols) {
 			this.size = size;
 			this.symbols = symbols;
 			this.grid = new Cell[size, size];
@@ -50,13 +50,13 @@ namespace Sudoku
 		/// Factory building a 4x4 resolved sudoku
 		/// </summary>
 		public static Sudoku DummyData() {
-			int[,] _data = {
-				{1, 2, 3, 4},
-				{4, 3, 2, 1},
-				{3, 4, 1, 2},
-				{2, 1, 4, 3}
+			char[,] _data = {
+				{'1', '2', '3', '4'},
+				{'4', '3', '2', '1'},
+				{'3', '4', '1', '2'},
+				{'2', '1', '4', '3'}
 			};
-			int[] _symbols = {1, 2, 3, 4};
+			char[] _symbols = {'1', '2', '3', '4'};
 			Sudoku g = new Sudoku(_data, 4, _symbols);
 			return g;
 		}
